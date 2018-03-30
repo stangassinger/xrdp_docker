@@ -1,0 +1,8 @@
+xfce on docker
+==============
+
+Connecting over network with xrdp
+
+it is split up in xrdp1 and xrdp2
+because the build process is much shorter 
+if there are changes to do.
