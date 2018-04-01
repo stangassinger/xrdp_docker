@@ -15,7 +15,7 @@ RUN apt-get -yy install \
     xfce4 xfce4-terminal xfce4-screenshooter xfce4-taskmanager \
     xfce4-clipman-plugin xfce4-cpugraph-plugin xfce4-netload-plugin \
     xfce4-xkb-plugin xauth supervisor uuid-runtime pulseaudio locales \
-    firefox pepperflashplugin-nonfree openssh-server git \
+    firefox pepperflashplugin-nonfree openssh-server git gitk flashplugin-installer \
     $BUILD_DEPS
 
 

@@ -6,3 +6,16 @@ Connecting over network with xrdp
 it is split up in xrdp1 and xrdp2
 because the build process is much shorter 
 if there are changes to do.
+
+higher than xrdp2 is optional,
+it just installs more optional software.
+
+#run
+docker run -v ~/docker/volume/myHome:/home/abc/Documents \
+           -v ~/docker/volume/ssh_etc:/etc --rm -d --name \
+           con_xrdp --hostname xrdp_server --shm-size 1g xrdp2
+
+
+#####
+connect to the machine with:
+rdesktop -rsound -g 1400x860  172.17.0.2
