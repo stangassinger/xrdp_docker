@@ -3,6 +3,9 @@ MAINTAINER Guenther Stangassinger
 
 RUN apt-get -y update
 RUN apt-get -yy upgrade
+RUN apt-get -yy install \
+         geany
+
 RUN dpkg --add-architecture i386
 RUN apt-get -y update
 RUN apt-get -yy upgrade
@@ -22,4 +25,10 @@ WORKDIR /tmp
 RUN wget "http://mirrors.cdn.adacore.com/art/591c6413c7a447af2deed0e3"
 RUN mv 591c6413c7a447af2deed0e3 gps.tar.gz
 RUN tar xfz gps.tar.gz
-RUN rm -rf /tmp/*
+
+ADD tmp /tmp
+RUN mv /tmp/doinstall /tmp/gnat-gpl-2017-arm-elf-linux-bin
+WORKDIR /tmp/gnat-gpl-2017-arm-elf-linux-bin
+RUN ./doinstall
+RUN echo "PATH=/usr/gnat/bin:$PATH" >> /home/abc/.profile
+
