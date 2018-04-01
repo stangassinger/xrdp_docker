@@ -4,7 +4,7 @@ MAINTAINER Guenther Stangassinger
 RUN apt-get -y update
 RUN apt-get -yy upgrade
 RUN apt-get -yy install \
-         geany
+         geany make
 
 RUN dpkg --add-architecture i386
 RUN apt-get -y update
