@@ -1,5 +1,5 @@
 
 # build
-docker build --rm -t  xrdp3 --shm-size 2g  .
+docker build --rm -t  xrdp3  .
 
 

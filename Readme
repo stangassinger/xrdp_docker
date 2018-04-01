@@ -12,7 +12,7 @@ it just installs more optional software.
 
 #run
 docker run -v ~/docker/volume/myHome:/home/abc/Documents \
-           -v ~/docker/volume/ssh_etc:/etc --rm -d --name \
+           -v ~/docker/volume/ssh_etc:/etc/ssh  --rm -it --name \
            con_xrdp --hostname xrdp_server --shm-size 1g xrdp2
 
 
