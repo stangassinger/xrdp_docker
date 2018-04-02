@@ -1,5 +1,0 @@
-
-# build
-docker build --rm -t  xrdp_AdaGpsArm  .
-
-
