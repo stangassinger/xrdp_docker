@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=gps
+Comment=
+Exec=sh -c "PATH="/usr/gnat/bin:\$PATH"; export PATH;gps"
+Icon=apport
+Path=
+Terminal=true
+StartupNotify=true
