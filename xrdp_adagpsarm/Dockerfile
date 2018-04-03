@@ -34,8 +34,8 @@ WORKDIR /tmp/stlink
 RUN make release
 WORKDIR /tmp/stlink/build/Release
 RUN make install
-RUN ldconfig /usr/local/lib
-#not working   RUN udevadm control --reload-rules
+RUN ldconfig /usr/local/lib/lib
+RUN udevadm control --reload-rules
 
 #download and install adacore gps
 WORKDIR /tmp
