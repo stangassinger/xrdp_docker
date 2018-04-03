@@ -22,7 +22,8 @@ RUN apt-get -yy install \
 ## needed for stlink
          build-essential \
          cmake \
-         libusb-1.0-0-dev
+         libusb-1.0-0-dev \
+         usbutils
                       
          
          

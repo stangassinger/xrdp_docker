@@ -19,3 +19,15 @@ docker run -v ~/docker/volume/myHome:/home/abc/Documents \
 #####
 connect to the machine with:
 rdesktop -rsound -g 1400x860  172.17.0.2
+
+
+###################
+## Ada Arm Gps
+docker run -v ~/docker/volume/myHome:/home/abc/Documents \
+           -v ~/docker/volume/ssh_etc:/etc/ssh  \
+           --privileged \
+           -v /dev/bus/usb:/dev/bus/usb  \
+           --rm -it --name con_xrdp \
+           --hostname xrdp_server \
+           --shm-size 1g \
+           xrdp_adagpsarm
