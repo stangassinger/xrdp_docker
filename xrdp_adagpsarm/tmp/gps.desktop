@@ -3,7 +3,7 @@ Version=1.0
 Type=Application
 Name=gps
 Comment=
-Exec=sh -c "PATH="/usr/gnat/bin:\$PATH"; export PATH;gps"
+Exec=sh -c "PATH="/usr/gnat/bin/usr/local/bin:\$PATH"; export PATH;gps"
 Icon=apport
 Path=
 Terminal=true
