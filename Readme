@@ -31,3 +31,11 @@ docker run -v ~/docker/volume/myHome:/home/abc/Documents \
            --hostname xrdp_server \
            --shm-size 1g \
            xrdp_adagpsarm
+           
+
+###################
+Known problems:
+Desktop icon can not be generated automatically.
+It has to be manually  copied:
+cp /tmp/gps.desktop /home/abc/Desktop/gps.desktop
+         
