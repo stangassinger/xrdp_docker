@@ -1,0 +1,21 @@
+#!/bin/sh
+prefix="/opt/spark2014"
+
+
+
+
+
+
+    echo "
+    installing package..."
+    mkdir -p $prefix
+    tar cf - bin include lib libexec share | (cd $prefix && tar xf -)
+    echo "    installation completed.
+    To use SPARK 2014, users must put $prefix/bin
+    in front of their PATH environment variable.
+    The following commands enable you to do this:
+       PATH=$prefix/bin:\$PATH  # Bourne shell
+       setenv PATH $prefix/bin:\$PATH  # C shell
+    Thank you for installing SPARK 2014!
+"
+
