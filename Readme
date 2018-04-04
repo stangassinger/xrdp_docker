@@ -56,5 +56,20 @@ Desktop icon can not be generated automatically.
 It has to be manually  copied:
 cp /tmp/gps.desktop /home/abc/Desktop/gps.desktop
 
-
+###################
+## Android
+docker run -v ~/docker/volume/myHome/android:/home/abc/Documents \
+           -v ~/docker/volume/ssh_etc:/etc/ssh  \
+           --privileged \
+           -v /dev/bus/usb:/dev/bus/usb  \
+           --rm -it --name con_xrdp \
+           --hostname xrdp_server \
+           --shm-size 1g \
+           android
+           
+-------------------
+Known problems:
+Desktop icon can not be generated automatically.
+It has to be manually  copied:
+cp /tmp/Android.desktop /home/abc/Desktop/Android.desktop           
 

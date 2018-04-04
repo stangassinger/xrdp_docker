@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=gps
+Comment=
+Exec=sh -c "PATH="/opt/spark2014/bin:/usr/gnat/bin:$PATH"; export PATH;LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/gnat/lib/gnat;export LD_LIBRARY_PATH;gps"
+Icon=apport
+Path=
+Terminal=true
+StartupNotify=true

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=AndroidStudio
+Comment=studio.sh
+Exec=./studio.sh
+Icon=checkbox
+Terminal=true
+StartupNotify=false
+Path=/opt/android-studio/bin
