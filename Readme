@@ -23,7 +23,7 @@ rdesktop -rsound -g 1400x860  172.17.0.2
 
 ###################
 ## Ada Arm Gps
-docker run -v ~/docker/volume/myHome:/home/abc/Documents \
+docker run -v ~/docker/volume/myHome/ada_arm:/home/abc/Documents \
            -v ~/docker/volume/ssh_etc:/etc/ssh  \
            --privileged \
            -v /dev/bus/usb:/dev/bus/usb  \
@@ -43,7 +43,7 @@ cp /tmp/gps_arm.desktop /home/abc/Desktop/gps_arm.desktop
    
 ###################
 ## Ada Gps
-docker run -v ~/docker/volume/myHome:/home/abc/Documents \
+docker run -v ~/docker/volume/myHome/ada_gtk:/home/abc/Documents \
            -v ~/docker/volume/ssh_etc:/etc/ssh  \
            --rm -it --name con_xrdp \
            --hostname xrdp_server \
