@@ -33,9 +33,28 @@ docker run -v ~/docker/volume/myHome:/home/abc/Documents \
            xrdp_adagpsarm
            
 
+-------------------
+Known problems:
+Desktop icon can not be generated automatically.
+It has to be manually  copied:
+cp /tmp/gps_arm.desktop /home/abc/Desktop/gps_arm.desktop
+   
+   
+   
 ###################
+## Ada Gps
+docker run -v ~/docker/volume/myHome:/home/abc/Documents \
+           -v ~/docker/volume/ssh_etc:/etc/ssh  \
+           --rm -it --name con_xrdp \
+           --hostname xrdp_server \
+           --shm-size 1g \
+           xrdp_adagps
+           
+-------------------
 Known problems:
 Desktop icon can not be generated automatically.
 It has to be manually  copied:
 cp /tmp/gps.desktop /home/abc/Desktop/gps.desktop
-         
+
+
+

@@ -50,6 +50,6 @@ RUN ./doinstall
 
 ENV PATH="/usr/gnat/bin:/usr/local/bin:${PATH}"
 
-#than copy /tmp/gps.desktop to /home/abc/Desktop
+#than copy /tmp/gps_arm.desktop to /home/abc/Desktop
 #does not work by script :-(
 
