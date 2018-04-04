@@ -1,0 +1,128 @@
+#!/bin/sh
+
+begin_message() {
+   clear
+}
+
+current_dir=`/bin/pwd`
+
+# Checks for the presence of a Gtk+ binary package in gtk-bin/
+check_gtk_bin() {
+   gtk_bin_dir=`pwd`/gtk-bin
+   if test ! -d "$gtk_bin_dir"; then
+      echo "Gtk+ binary package not found. Aborting the installation process."
+      exit
+   fi
+}
+
+## Read the base directory (absolute path name)
+## Sets the variable  $basedir
+ask_basedir() {
+   clear
+   default_dir=`type gnatmake 2>/dev/null| cut -d' ' -f3`
+   default_dir=`dirname "$default_dir" 2>/dev/null`
+
+   if [ "$default_dir" != "" -a "$default_dir" != "." -a "$default_dir" != "/usr/bin" ]; then
+      default_dir=`cd "$default_dir/.."; pwd`
+      cat <<EOF
+
+  GNAT has been found in $default_dir.
+  Do you want to install GtkAda there too? Hit RETURN if yes or enter
+  the name of the directory in which GtkAda should be installed:
+
+EOF
+   else
+     default_dir=/opt/gtkada
+     cat <<EOF
+  Enter the name of the directory in which you would like to install GtkAda
+
+EOF
+   fi
+
+   
+   basedir="$default_dir"
+
+   # Suppress the final / in basedir
+   basedir=`echo "$basedir" | sed -e 's/\/$//'`
+
+   # Check that we have permission to write in $basedir
+   if test -d "$basedir"; then
+     if test -w "$basedir"; then
+        if [ -x "$basedir/bin/gtkada" ]; then
+           echo "  $basedir/bin/gtkada found."
+           printf "  Do you want to overwrite existing installation [Y/n] ? "
+           
+           if [ "$x" = "n" -o "$x" = "N" ]; then
+              echo "Aborting the installation process"
+	      exit
+           fi
+        fi
+     else
+        echo "You do not have permission to write in $basedir"
+        echo "Please check whether you should be root to install in that directory."
+        echo "Aborting the installation process"
+        exit
+     fi
+   else
+     echo ""
+     
+    
+     mkdir -p "$basedir"
+   fi
+
+   echo ""
+   
+   if [ "$x" = "n" -o "$x" = "N" ]; then
+      echo "Aborting the installation process"
+      exit
+   fi
+}
+
+##################################
+## Do the actual installation
+##################################
+
+install_binaries() {
+
+  echo "Copying the Gtk+ binaries"
+
+  cp -r $gtk_bin_dir/* $basedir
+
+  echo "Setting up the environment"
+  eval `$basedir/bin/gtkada-env.sh --print-only`
+
+  echo "Compiling GtkAda"
+  ./configure --prefix=$basedir --with-GL=no && make all install 2>&1 | \
+     tee install.log
+
+  if [ "$?" != "0" ]; then
+     echo ""
+     echo "An error occurred. Please see install.log."""
+     exit 1
+  fi
+}
+
+##
+##  Write the end message
+##
+end_message() {
+   clear
+   cat <<EOF
+
+   GtkAda has now been installed on your machine.
+
+   You can enter the GtkAda environment by doing:
+
+      $basedir/bin/gtkada-env.sh
+
+EOF
+}
+
+## Main program
+
+check_gtk_bin
+begin_message
+ask_basedir
+install_binaries
+end_message
+

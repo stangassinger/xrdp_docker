@@ -29,7 +29,7 @@ RUN mv /tmp/doinstall /tmp/gnat-gpl-2017-x86_64-linux-bin
 WORKDIR /tmp/gnat-gpl-2017-x86_64-linux-bin
 RUN ./doinstall
 
-RUN mv /tmp/doinstall_gtk /tmp/gtkada-gpl-2017-x86_64-linux-bin/doinstall
+RUN mv /tmp/doinstall_gtkada /tmp/gtkada-gpl-2017-x86_64-linux-bin/doinstall
 WORKDIR /tmp/gtkada-gpl-2017-x86_64-linux-bin
-RUN PATH=/usr/gnat/bin  ./doinstall
+RUN "PATH=/usr/gnat/bin:$PATH"  ./doinstall
 
