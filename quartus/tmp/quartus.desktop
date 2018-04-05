@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=quartus
+Exec=/home/tux/intelFPGA_lite/17.1/quartus/bin/quartus
+Icon=preferences-system-power
+Path=/home/tux/intelFPGA_lite/17.1/quartus/bin; 
+Terminal=false
+StartupNotify=false

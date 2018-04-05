@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ModelSim
+Comment=
+Icon=gtk-theme-config
+Path=/home/tux/intelFPGA_lite/17.1/modelsim_ase/bin
+Terminal=true
+StartupNotify=true
+Exec=/home/tux/intelFPGA_lite/17.1/modelsim_ase/bin/vsim

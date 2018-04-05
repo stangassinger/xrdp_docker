@@ -1,0 +1,4 @@
+Download Quartus Prime Lite Edition 
+from
+http://dl.altera.com/?edition=lite
+it can not be done in docker script
