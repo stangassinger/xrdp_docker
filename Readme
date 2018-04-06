@@ -18,7 +18,7 @@ docker run -v ~/docker/volume/myHome:/home/abc/Documents \
 
 #####
 connect to the machine with:
-rdesktop -rsound -g 1400x860  172.17.0.2
+rdesktop -rsound -g 1500x860  172.17.0.2
 
 
 ###################
@@ -77,8 +77,10 @@ cp /tmp/Android.desktop /home/abc/Desktop/Android.desktop
 
 ###################
 ## Quartus
+## -v /sys:/sys:ro is necessary to prevent quartus to segFault
 sudo    docker run -v ~/docker/volume/myHome/quartus:/home/abc/Documents \
                    -v ~/docker/volume/ssh_etc:/etc/ssh \
+                   -v /sys:/sys:ro \
                    --privileged  -v /dev/bus/usb:/dev/bus/usb \
                    --rm -it --name con_xrdp \
                    --hostname xrdp_server \
