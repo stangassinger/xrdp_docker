@@ -30,7 +30,7 @@ docker run -v ~/docker/volume/myHome/ada_arm:/home/abc/Documents \
            --rm -it --name con_xrdp \
            --hostname xrdp_server \
            --shm-size 1g \
-           xrdp_adagpsarm
+           adagpsarm
            
 
 -------------------
@@ -48,7 +48,7 @@ docker run -v ~/docker/volume/myHome/ada_gtk:/home/abc/Documents \
            --rm -it --name con_xrdp \
            --hostname xrdp_server \
            --shm-size 1g \
-           xrdp_adagps
+           adagps
            
 -------------------
 Known problems:
