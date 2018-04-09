@@ -23,12 +23,13 @@ RUN  dpkg --add-architecture i386 && \
          
 ADD tmp /tmp
 WORKDIR /tmp
-RUN tar -xvf Quartus-lite-17.1.0.590-linux.tar
+RUN wget http://download.altera.com/akdlm/software/acdsinst/17.1std.1/593/ib_tar/Quartus-lite-17.1.1.593-linux.tar
+RUN tar -xvf Quartus-lite-17.1.1.593-linux.tar
 WORKDIR /tmp/components
-RUN ./ModelSimSetup-17.1.0.590-linux.run     --accept_eula 1 \
+RUN ./ModelSimSetup-17.1.1.593-linux.run     --accept_eula 1 \
              --mode unattended --unattendedmodeui none --installdir \
              /opt/altera_lite
-RUN ./QuartusLiteSetup-17.1.0.590-linux.run  --accept_eula 1 \
+RUN ./QuartusLiteSetup-17.1.1.593-linux.run  --accept_eula 1 \
              --mode unattended --unattendedmodeui none --installdir \
              /opt/altera_lite
 
