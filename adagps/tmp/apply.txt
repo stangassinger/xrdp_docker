@@ -1,0 +1,1 @@
+cp gps.desktop ~/Desktop

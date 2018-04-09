@@ -1,0 +1,1 @@
+cp quartus.desktop  ~/Desktop
