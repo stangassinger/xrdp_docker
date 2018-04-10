@@ -3,7 +3,7 @@ MAINTAINER Guenther Stangassinger
 
 # Install packages
 
-ENV DEBIAN_FRONTEND noninteractive
+## do not use this: ENV DEBIAN_FRONTEND noninteractive
 RUN sed -i "s/# deb-src/deb-src/g" /etc/apt/sources.list
 RUN apt-get -y update
 RUN apt-get -yy upgrade
