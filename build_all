@@ -3,3 +3,11 @@ cd xrdp1
 . ./run
 cd ../xrdp2
 . ./run
+cd ../adagps
+. ./run
+cd ../adagpsarm
+. ./run
+cd ../android
+. ./run
+cd ../quartus
+. ./run

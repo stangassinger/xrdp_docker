@@ -1,5 +1,4 @@
-
 # build
-docker build --rm -t  adagpsarm  .
+sudo docker build --rm -t  adagpsarm  .
 
 

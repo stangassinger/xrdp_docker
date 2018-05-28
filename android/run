@@ -1,5 +1,4 @@
-
 # build
-docker build --rm -t  android  .
+sudo docker build --rm -t  android  .
 
 
