@@ -1,0 +1,5 @@
+## Building all images with one command:
+cd xrdp1
+. ./run
+cd ../xrdp2
+. ./run

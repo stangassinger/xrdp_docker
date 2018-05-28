@@ -1,27 +1,2 @@
-
 # build
-docker build --rm -t xrdp2  .
-
-#run
-docker run -v ~/docker/volume/myHome:/home/abc/Documents \
-           -v ~/docker/volume/ssh_etc:/etc --rm -d --name \
-           con_xrdp --hostname xrdp_server --shm-size 1g xrdp2
-
-#Add new users
-
-docker exec -ti con_xrdp adduser username
-
-
-#Add new services
-#Example: Add mysql as a service
-
-apt-get -yy install mysql-server
-echo "[program:mysqld] \
-command= /usr/sbin/mysqld \
-user=mysql \
-autorestart=true \
-priority=100" > /etc/supervisor/conf.d/mysql.conf
-
-#####
-connect to the machine with:
-rdesktop -rsound -g 1400x860  172.17.0.2
+sudo docker build --rm -t xrdp2  .

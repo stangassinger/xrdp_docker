@@ -1,4 +1,3 @@
-
 # build
-docker build --rm -t xrdp1  .
+sudo docker build --rm -t xrdp1  .
 
