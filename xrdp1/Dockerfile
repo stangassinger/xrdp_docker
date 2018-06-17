@@ -39,10 +39,12 @@ RUN sed -i "s/\/tmp\/pulseaudio\-10\.0/\/tmp\/pulseaudio\-8\.0/g" Makefile
 RUN make
 RUN cp *.so /usr/lib/pulse-8.0/modules/
 
+
+
 # Build xorgxrdp
 
 WORKDIR /tmp
-RUN git clone --branch v0.2.4 --recursive https://github.com/neutrinolabs/xorgxrdp.git
+RUN git clone --branch v0.2.6 --recursive https://github.com/neutrinolabs/xorgxrdp.git
 RUN apt-get -yy install xserver-xorg-dev
 WORKDIR /tmp/xorgxrdp
 RUN ./bootstrap
