@@ -1,9 +1,6 @@
 ## Building all images with one command:
-echo "run xrdp1"
-cd xrdp1
-. ./run
 echo "run xrdp2"
-cd ../xrdp2
+cd xrdp2
 . ./run
 echo "run adagps"
 cd ../adagps

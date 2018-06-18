@@ -1,6 +1,7 @@
 FROM xrdp2
 MAINTAINER Guenther Stangassinger
 
+RUN apt-add-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe"
 RUN apt-get -y update
 RUN apt-get -yy upgrade
 RUN apt-get -yy install \
