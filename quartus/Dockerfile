@@ -1,4 +1,6 @@
-FROM xrdp2
+# quartus does not work on ubuntu 18.04
+# therefore ubuntu 16.04 must be taken
+FROM xrdp1     
 MAINTAINER Guenther Stangassinger
 
 RUN apt-add-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe"
