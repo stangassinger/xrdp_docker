@@ -92,7 +92,7 @@ docker run -v ~/docker/volume/myHome/NN:/home/abc  \
            --rm -it --name con_xrdp      \
            --hostname xrdp_server  \
            --shm-size 1g \
-           NN                   
+           nn                  
                    
 -------------------
 Known problems:

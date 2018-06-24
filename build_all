@@ -17,3 +17,6 @@ cd ../android
 echo "run quartus"
 cd ../quartus
 . ./run
+echo "run neural network"
+cd ../NN
+. ./run
