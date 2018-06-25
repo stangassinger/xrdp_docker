@@ -5,6 +5,7 @@ RUN apt-get -y update
 RUN apt-get -yy upgrade
 RUN apt-get -yy install \
          geany   python-scipy python-pip
+RUN pip install opencv-python
                       
          
         
