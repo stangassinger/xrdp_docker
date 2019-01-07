@@ -21,8 +21,7 @@ rdesktop -u abc -p abc -rsound -g 1500x860  172.17.0.2
 ## Ada Arm Gps
 docker run -v ~/docker/volume/myHome/ada_arm:/home/abc \
            -v ~/docker/volume/ssh_etc:/etc/ssh  \
-		   --privileged=false \
-		   --device=/dev/bus/usb \
+		   --privileged=true \		   
 		   -v /dev/bus/usb:/dev/bus/usb  \		   
 		   -v /dev/kvm:/dev/kvm \
            --rm -it --name con_xrdp \
@@ -58,8 +57,7 @@ cp /tmp/gps.desktop /home/abc/Desktop/gps.desktop
 ## Android
 docker run -v ~/docker/volume/myHome/android:/home/abc \
            -v ~/docker/volume/ssh_etc:/etc/ssh  \
-   		   --privileged=false \
-		   --device=/dev/bus/usb \
+   		   --privileged=true \
            -v /dev/bus/usb:/dev/bus/usb  \           
            -v /dev/kvm:/dev/kvm \
            --rm -it --name con_xrdp \
@@ -81,8 +79,7 @@ cp /tmp/Android.desktop /home/abc/Desktop/Android.desktop
 docker run -v ~/docker/volume/myHome/quartus:/home/abc \
                    -v ~/docker/volume/ssh_etc:/etc/ssh \
                    -v /sys:/sys:ro \
-        		   --privileged=false \
-		           --device=/dev/bus/usb \
+        		   --privileged=true \		           
 				   -v /dev/bus/usb:/dev/bus/usb  \			
 				   -v /dev/kvm:/dev/kvm \
                    --rm -it --name con_xrdp \
@@ -96,8 +93,7 @@ docker run -v ~/docker/volume/myHome/quartus:/home/abc \
 ## this is a playground for neural network         
 docker run -v ~/docker/volume/myHome/NN:/home/abc  \
            -v ~/docker/volume/ssh_etc:/etc/ssh   \
-		   --privileged=false \
-		   --device=/dev/bus/usb \
+		   --privileged=true \		   
            -v /dev/bus/usb:/dev/bus/usb  \           
            -v /dev/kvm:/dev/kvm \
            --rm -it --name con_xrdp      \
