@@ -11,7 +11,7 @@ RUN install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 RUN apt-get install apt-transport-https
 RUN apt-get update
-RUN apt-get install code golang-go
+RUN apt-get -yy install code golang-go
 # embedded Rust
 RUN curl https://sh.rustup.rs -sSf -y | sh   
 RUN apt-get -yy install \
