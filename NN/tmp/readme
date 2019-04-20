@@ -1,2 +1,2 @@
-split  -b 60M  cube.zip  cube-
+split  -b 40M  cube.zip  cube-
 cat cube-* > cube.zip 
