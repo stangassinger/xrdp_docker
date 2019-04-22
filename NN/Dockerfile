@@ -9,9 +9,21 @@ RUN pip install opencv-python
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 RUN install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+RUN apt-get -y update
 RUN apt-get install apt-transport-https
-RUN apt-get update
-RUN apt-get -yy install code golang-go
+RUN apt-get -y update
+RUN apt-get -yy install code golang-go unzip default-jre
+#cube
+ADD tmp/cube-aa          /tmp/cube-aa 
+ADD tmp/cube-ab          /tmp/cube-ab 
+ADD tmp/cube-ac          /tmp/cube-ac 
+ADD tmp/auto-install.xml /tmp/auto-install.xml
+WORKDIR /tmp
+RUN cat cube-* > cube.zip 
+RUN unzip cube.zip
+RUN ./SetupSTM32CubeMX-5.1.0.linux  auto-install.xml
+
+
 # embedded Rust
 RUN curl https://sh.rustup.rs -sSf -y | sh   
 RUN apt-get -yy install \
