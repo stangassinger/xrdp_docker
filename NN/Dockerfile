@@ -4,6 +4,10 @@ MAINTAINER Guenther Stangassinger
 RUN apt-get -y update
 RUN apt-get -yy upgrade
 RUN apt-get -y update
+RUN apt-get -yy install aptitude
+RUN apt-get -y update
+RUN aptitude safe-upgrade -yy
+RUN apt-get -y update
 RUN apt-get -yy install \
          geany   python-scipy  python-pip curl
 RUN pip install opencv-python
