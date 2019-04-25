@@ -45,4 +45,4 @@ ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", MODE:="0666"\n \
 ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE:="0666"' \         
         > /etc/udev/rules.d/99-openocd.rules
         
-
+RUN apt-get -y update
