@@ -17,7 +17,7 @@ RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode st
 RUN apt-get -y update
 RUN apt-get install apt-transport-https
 RUN apt-get -y update
-RUN apt-get -yy install code golang-go unzip default-jre
+RUN apt-get -yy install code golang-go unzip default-jre  gcc-arm-none-eabi
 #cube
 ADD tmp/cube-aa          /tmp/cube-aa 
 ADD tmp/cube-ab          /tmp/cube-ab 
