@@ -11,9 +11,9 @@ cd ./xrdp2
 ##echo "run adagpsarm"
 ##cd ../adagpsarm
 ##. ./run
-##echo "run android"
-##cd ../android
-##. ./run
+echo "run android"
+cd ../android
+. ./run
 ##echo "run quartus"
 ##cd ../quartus
 . ./run

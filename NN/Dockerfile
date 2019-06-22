@@ -18,6 +18,15 @@ RUN apt-get -y update
 RUN apt-get install apt-transport-https
 RUN apt-get -y update
 RUN apt-get -yy install code golang-go unzip default-jre  gcc-arm-none-eabi
+#gdbgui
+RUN apt-get update && apt-get install -y \
+	libncurses5 \
+	python3.7-minimal \
+	python3-pip \
+	wget 	
+RUN pip3 install --upgrade setuptools \
+    && pip3 install eventlet gevent gevent-websocket \
+&& pip3 install 'gdbgui==0.13.1.1'
 #cube
 ADD tmp/cube-aa          /tmp/cube-aa 
 ADD tmp/cube-ab          /tmp/cube-ab 
@@ -28,14 +37,14 @@ RUN cat cube-* > cube.zip
 RUN unzip cube.zip
 RUN java -jar ./SetupSTM32CubeMX-5.1.0.exe  auto-install.xml
 # embedded Rust
-RUN curl https://sh.rustup.rs -sSf -y | sh   
+RUN curl -sSf https://sh.rustup.rs | sh -s -- -y 
 RUN apt-get -yy install \
 #         cargo \    
-         gdb-multiarch \
-         openocd \
-         binutils \
-         usbutils \
-         minicom 
+          gdb-multiarch \
+          openocd \
+          binutils \
+          usbutils \
+          minicom 
 RUN echo '# FT232 - USB <-> Serial Converter \n \
 ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE:="0666"' \
       > /etc/udev/rules.d/99-ftdi.rules
