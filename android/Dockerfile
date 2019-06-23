@@ -23,9 +23,8 @@ WORKDIR /tmp
 ## RUN unzip  android-studio-ide-173.4720617-linux.zip
 
 
-RUN wget  "https://dl.google.com/dl/android/studio/ide-zips/3.1.3.0/android-studio-ide-173.4819257-linux.zip"
-RUN unzip  android-studio-ide-173.4819257-linux.zip
-
+RUN wget  "https://dl.google.com/dl/android/studio/ide-zips/3.4.1.0/android-studio-ide-183.5522156-linux.tar.gz"
+RUN tar xfz  android-studio-ide-183.5522156-linux.tar.gz
 RUN mv /tmp/android-studio /opt
 
 ADD tmp /tmp
