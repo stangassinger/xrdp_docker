@@ -16,7 +16,7 @@ RUN apt-get -yy install \
     xfce4-clipman-plugin xfce4-cpugraph-plugin xfce4-netload-plugin \
     xfce4-xkb-plugin xauth supervisor uuid-runtime pulseaudio locales \
     firefox pepperflashplugin-nonfree openssh-server git gitk flashplugin-installer \ 
-    evince xpdf \
+    evince xpdf atril \
     $BUILD_DEPS
 
 
