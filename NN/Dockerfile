@@ -9,7 +9,7 @@ RUN apt-get -y update
 RUN aptitude safe-upgrade -yy
 RUN apt-get -y update
 RUN apt-get -yy install \
-         geany   python-scipy  python-pip curl
+         geany  gedit  python-scipy  python-pip curl
 RUN pip install opencv-python
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 RUN install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
