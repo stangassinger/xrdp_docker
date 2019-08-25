@@ -36,7 +36,8 @@ Desktop icon can not be generated automatically.
 It has to be manually  copied:
 cp /tmp/gps_arm.desktop /home/abc/Desktop/gps_arm.desktop
    
-   
+
+Right now there are four different development environments:   
    
 ###################
 ## Ada Gps
@@ -106,4 +107,15 @@ Known problems:
 Desktop icon can not be generated automatically.
 It has to be manually  copied:
 cp /tmp/quartus.desktop /home/abc/Desktop/quartus.desktop     
-cp /tmp/ModelSim.desktop /home/abc/Desktop/ModelSim.desktop                
+cp /tmp/ModelSim.desktop /home/abc/Desktop/ModelSim.desktop  
+
+
+###################         
+!!!! before you connect over rdesktop
+!!!! you have to make the rights correct.
+!!!! otherwise the remote desktop will stay black.
+
+$ cd ~/docker
+$ chmod 777 -R .
+
+         
