@@ -57,10 +57,12 @@ RUN git clone https://github.com/AdaCore/gnat_community_install_script.git
 RUN cd gnat_community_install_script 
 RUN wget http://mirrors.cdn.adacore.com/art/5cdffc5409dcd015aaf82626 -O ./gnat-gps-installation
 WORKDIR /tmp/gnat_community_install_script
-RUN pwd
-RUN ls -la /tmp
 RUN sh install_package.sh ../gnat-gps-installation /opt/GNAT/2019
-ENV PATH="/opt/GNAT/2019/bin:${PATH}"
+WORKDIR /tmp
+RUN cd gnat_community_install_script 
+RUN wget  http://mirrors.cdn.adacore.com/art/5ce0010709dcd015aaf8262b -O ./gnat-gps-arm-installation
+WORKDIR /tmp/gnat_community_install_script
+RUN sh install_package.sh ../gnat-gps-arm-installation /opt/GNAT/2019-arm-elf
 
 
 #than copy /tmp/gps_arm.desktop to /home/abc/Desktop
