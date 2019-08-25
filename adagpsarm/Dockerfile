@@ -37,18 +37,31 @@ RUN make install
 RUN ldconfig /usr/local/lib/lib
 ## not working  RUN udevadm control --reload-rules
 
-#download and install adacore gps
+### download and install adacore gps 2017
+### WORKDIR /tmp
+### RUN wget  "http://mirrors.cdn.adacore.com/art/591c6413c7a447af2deed0e3"
+### RUN mv 591c6413c7a447af2deed0e3 gps.tar.gz
+### RUN tar xfz gps.tar.gz
+
+### ADD tmp /tmp
+### RUN mv /tmp/doinstall /tmp/gnat-gpl-2017-arm-elf-linux-bin
+### WORKDIR /tmp/gnat-gpl-2017-arm-elf-linux-bin
+### RUN ./doinstall
+### 
+### ENV PATH="/usr/gnat/bin:/usr/local/bin:${PATH}"
+
+
+### download and install adacore gps 2019
 WORKDIR /tmp
-RUN wget  "http://mirrors.cdn.adacore.com/art/591c6413c7a447af2deed0e3"
-RUN mv 591c6413c7a447af2deed0e3 gps.tar.gz
-RUN tar xfz gps.tar.gz
+RUN git clone https://github.com/AdaCore/gnat_community_install_script.git
+RUN cd gnat_community_install_script 
+RUN wget http://mirrors.cdn.adacore.com/art/5cdffc5409dcd015aaf82626 -O ./gnat-gps-installation
+WORKDIR /tmp/gnat_community_install_script
+RUN pwd
+RUN ls -la /tmp
+RUN sh install_package.sh ../gnat-gps-installation /opt/GNAT/2019
+ENV PATH="/opt/GNAT/2019/bin:${PATH}"
 
-ADD tmp /tmp
-RUN mv /tmp/doinstall /tmp/gnat-gpl-2017-arm-elf-linux-bin
-WORKDIR /tmp/gnat-gpl-2017-arm-elf-linux-bin
-RUN ./doinstall
-
-ENV PATH="/usr/gnat/bin:/usr/local/bin:${PATH}"
 
 #than copy /tmp/gps_arm.desktop to /home/abc/Desktop
 #does not work by script :-(
