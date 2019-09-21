@@ -36,7 +36,14 @@ WORKDIR /tmp
 RUN cat cube-* > cube.zip 
 RUN unzip cube.zip
 RUN java -jar ./SetupSTM32CubeMX-5.1.0.exe  auto-install.xml
-# embedded Rust
+# ada fsf
+RUN apt-get -yy install \
+                gnat \
+                gnat-7-arm-linux-gnueabi \
+                gnat-7-arm-linux-gnueabihf \
+                gcc-arm-linux-gnueabi \
+                gcc-arm-linux-gnueabihf \ 
+                gprbuild
 RUN curl -sSf https://sh.rustup.rs | sh -s -- -y 
 RUN apt-get -yy install \
 #         cargo \    
