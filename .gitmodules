@@ -1,0 +1,6 @@
+[submodule "NN/tmp/st_tooling"]
+	path = NN/tmp/st_tooling
+	url = https://github.com/stangassinger/st_tooling.git
+[submodule "adagpsarm/tmp/st_tooling"]
+	path = adagpsarm/tmp/st_tooling
+	url = https://github.com/stangassinger/st_tooling.git
