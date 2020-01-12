@@ -3,11 +3,13 @@ MAINTAINER Guenther Stangassinger
 
 RUN apt-get -y update
 RUN apt-get -yy upgrade
+RUN apt-get -y update --fix-missing
+RUN apt-get -yy install default-jre 
 RUN apt-get -yy install \
-         geany make
+         geany make unzip 
 
 RUN dpkg --add-architecture i386
-RUN apt-get -y update
+RUN apt-get -y update 
 RUN apt-get -yy upgrade
 
 RUN apt-get -yy install \ 
