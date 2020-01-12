@@ -55,12 +55,12 @@ RUN ldconfig /usr/local/lib/lib
 WORKDIR /tmp
 RUN git clone https://github.com/AdaCore/gnat_community_install_script.git
 RUN cd gnat_community_install_script 
-RUN wget http://mirrors.cdn.adacore.com/art/5cdffc5409dcd015aaf82626 -O ./gnat-gps-installation
+RUN wget https://community.download.adacore.com/v1/0cd3e2a668332613b522d9612ffa27ef3eb0815b?filename=gnat-community-2019-20190517-x86_64-linux-bin -O ./gnat-gps-installation
 WORKDIR /tmp/gnat_community_install_script
 RUN sh install_package.sh ../gnat-gps-installation /opt/GNAT/2019
 WORKDIR /tmp
 RUN cd gnat_community_install_script 
-RUN wget  http://mirrors.cdn.adacore.com/art/5ce0010709dcd015aaf8262b -O ./gnat-gps-arm-installation
+RUN wget  https://community.download.adacore.com/v1/6696259f92b40178ab1cc1d3e005acf705dc4162?filename=gnat-community-2019-20190517-arm-elf-linux64-bin -O ./gnat-gps-arm-installation
 WORKDIR /tmp/gnat_community_install_script
 RUN sh install_package.sh ../gnat-gps-arm-installation /opt/GNAT/2019-arm-elf
 ##########
