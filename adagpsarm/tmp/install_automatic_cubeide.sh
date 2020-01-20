@@ -1,5 +1,5 @@
 #!/usr/bin/expect -f
-log_file -a "expect.log"
+#log_file -a "expect.log"
 set exp_internal 1 
 set done  0
 set timeout 20
@@ -13,7 +13,7 @@ send    "y\r"
 while {$done == 0} {
 sleep 1
 expect {
-"*Moreii*" { send  "\r" }
+"*More*" { send  "\r" }
 "*N/y*"  { send  "y\r"; set done 1 }
 }
 }

@@ -6,7 +6,7 @@ RUN apt-get -yy upgrade
 RUN apt-get -y update --fix-missing
 RUN apt-get -yy install default-jre 
 RUN apt-get -yy install \
-         geany make unzip 
+         geany make unzip expect
 
 RUN dpkg --add-architecture i386
 RUN apt-get -y update 
@@ -95,10 +95,12 @@ ADD tmp/st_tooling/cubeide/cubeide-an          /tmp/cubeide-an
 ADD tmp/st_tooling/cubeide/cubeide-ao          /tmp/cubeide-ao 
 ADD tmp/st_tooling/cubeide/cubeide-ap          /tmp/cubeide-ap 
 ADD tmp/st_tooling/cubeide/cubeide-aq          /tmp/cubeide-aq 
+ADD tmp/install_automatic_cubeide.sh           /tmp/install_automatic_cubeide.sh
 WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
 RUN unzip cubeide.zip
 ##RUN . ./st-stm32cubeide_1.2.0_5034_20200108_0926_amd64.deb_bundle.sh -yy
+RUN . ./install_automatic_cubeide.sh
 ##########
 #than copy /tmp/gps_arm.desktop to /home/abc/Desktop
 #does not work by script :-(
