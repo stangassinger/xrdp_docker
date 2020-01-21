@@ -100,7 +100,7 @@ WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
 RUN unzip cubeide.zip
 ##RUN . ./st-stm32cubeide_1.2.0_5034_20200108_0926_amd64.deb_bundle.sh -yy
-RUN . ./install_automatic_cubeide.sh
+RUN expect ./install_automatic_cubeide.sh
 ##########
 #than copy /tmp/gps_arm.desktop to /home/abc/Desktop
 #does not work by script :-(

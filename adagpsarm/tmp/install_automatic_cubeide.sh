@@ -17,3 +17,4 @@ expect {
 "*N/y*"  { send  "y\r"; set done 1 }
 }
 }
+expect eof
