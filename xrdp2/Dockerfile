@@ -1,5 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:18.04 as base
 MAINTAINER Guenther Stangassinger
+
+FROM base as builder
 
 # Install packages
 
@@ -9,7 +11,8 @@ RUN apt-get -y update
 RUN apt-get -yy upgrade
 ENV BUILD_DEPS="autoconf libssl-dev libpam0g-dev \
     libx11-dev libxfixes-dev libxrandr-dev nasm xsltproc flex \
-    bison libxml2-dev dpkg-dev libcap-dev"
+    bison libxml2-dev dpkg-dev libcap-dev libfuse-dev libpulse-dev libtool \
+    xserver-xorg-dev wget ssl-cert"
 RUN apt-get -yy install \ 
 	sudo synaptic pkg-config apt-utils software-properties-common vim wget ca-certificates \
     xfce4 xfce4-terminal xfce4-screenshooter xfce4-taskmanager \
