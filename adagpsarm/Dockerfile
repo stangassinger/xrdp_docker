@@ -6,7 +6,7 @@ RUN apt-get -yy upgrade
 RUN apt-get -y update --fix-missing
 RUN apt-get -yy install default-jre 
 RUN apt-get -yy install \
-         geany make unzip expect
+         geany make unzip expect wget
 
 RUN dpkg --add-architecture i386
 RUN apt-get -y update 
@@ -76,7 +76,7 @@ ADD tmp/auto-install.xml /tmp/auto-install.xml
 WORKDIR /tmp
 RUN cat cubemx-* > cubemx.zip 
 RUN unzip cubemx.zip
-RUN java -jar ./SetupSTM32CubeMX-5.6.0.exe  auto-install.xml
+RUN java -jar ./SetupSTM32CubeMX-5.6.1.exe  auto-install.xml
 #cubeide tmp/st_tooling02/cubeide
 ADD tmp/st_tooling02/cubeide/cubeide-aa          /tmp/cubeide-aa 
 ADD tmp/st_tooling02/cubeide/cubeide-ab          /tmp/cubeide-ab 
