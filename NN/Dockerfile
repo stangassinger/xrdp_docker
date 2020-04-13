@@ -37,7 +37,7 @@ ADD tmp/auto-install.xml /tmp/auto-install.xml
 WORKDIR /tmp
 RUN cat cubemx-* > cubemx.zip 
 RUN unzip cubemx.zip
-RUN java -jar ./SetupSTM32CubeMX-5.6.0.exe  auto-install.xml
+RUN java -jar ./SetupSTM32CubeMX-5.6.1.exe  auto-install.xml
 #cubeide tmp/st_tooling02/cubeide
 ADD tmp/st_tooling02/cubeide/cubeide-aa          /tmp/cubeide-aa 
 ADD tmp/st_tooling02/cubeide/cubeide-ab          /tmp/cubeide-ab 
