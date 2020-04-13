@@ -2,6 +2,8 @@ xfce on docker
 ==============
 
 Connecting over network with xrdp
+Code parts taken from:
+https://github.com/danielguerra69/ubuntu-xrdp
 
 xrdp1 is ubuntu:16.04
 xrdp2 is ubuntu:18.04
