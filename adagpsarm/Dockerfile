@@ -66,35 +66,35 @@ RUN wget  https://community.download.adacore.com/v1/6696259f92b40178ab1cc1d3e005
 WORKDIR /tmp/gnat_community_install_script
 RUN sh install_package.sh ../gnat-gps-arm-installation /opt/GNAT/2019-arm-elf
 ##########
-#cube tmp/st_tooling/cubemx
-ADD tmp/st_tooling/cubemx/cubemx-aa          /tmp/cubemx-aa 
-ADD tmp/st_tooling/cubemx/cubemx-ab          /tmp/cubemx-ab 
-ADD tmp/st_tooling/cubemx/cubemx-ac          /tmp/cubemx-ac 
-ADD tmp/st_tooling/cubemx/cubemx-ad          /tmp/cubemx-ad 
-ADD tmp/st_tooling/cubemx/cubemx-ae          /tmp/cubemx-ae 
+#cube tmp/st_tooling02/cubemx
+ADD tmp/st_tooling02/cubemx/cubemx-aa          /tmp/cubemx-aa 
+ADD tmp/st_tooling02/cubemx/cubemx-ab          /tmp/cubemx-ab 
+ADD tmp/st_tooling02/cubemx/cubemx-ac          /tmp/cubemx-ac 
+ADD tmp/st_tooling02/cubemx/cubemx-ad          /tmp/cubemx-ad 
+ADD tmp/st_tooling02/cubemx/cubemx-ae          /tmp/cubemx-ae 
 ADD tmp/auto-install.xml /tmp/auto-install.xml
 WORKDIR /tmp
 RUN cat cubemx-* > cubemx.zip 
 RUN unzip cubemx.zip
-RUN java -jar ./SetupSTM32CubeMX-5.5.0.exe  auto-install.xml
-#cubeide tmp/st_tooling/cubeide
-ADD tmp/st_tooling/cubeide/cubeide-aa          /tmp/cubeide-aa 
-ADD tmp/st_tooling/cubeide/cubeide-ab          /tmp/cubeide-ab 
-ADD tmp/st_tooling/cubeide/cubeide-ac          /tmp/cubeide-ac 
-ADD tmp/st_tooling/cubeide/cubeide-ad          /tmp/cubeide-ad 
-ADD tmp/st_tooling/cubeide/cubeide-ae          /tmp/cubeide-ae 
-ADD tmp/st_tooling/cubeide/cubeide-af          /tmp/cubeide-af 
-ADD tmp/st_tooling/cubeide/cubeide-ag          /tmp/cubeide-ag 
-ADD tmp/st_tooling/cubeide/cubeide-ah          /tmp/cubeide-ah 
-ADD tmp/st_tooling/cubeide/cubeide-ai          /tmp/cubeide-ai 
-ADD tmp/st_tooling/cubeide/cubeide-aj          /tmp/cubeide-aj 
-ADD tmp/st_tooling/cubeide/cubeide-ak          /tmp/cubeide-ak 
-ADD tmp/st_tooling/cubeide/cubeide-al          /tmp/cubeide-al 
-ADD tmp/st_tooling/cubeide/cubeide-am          /tmp/cubeide-am 
-ADD tmp/st_tooling/cubeide/cubeide-an          /tmp/cubeide-an 
-ADD tmp/st_tooling/cubeide/cubeide-ao          /tmp/cubeide-ao 
-ADD tmp/st_tooling/cubeide/cubeide-ap          /tmp/cubeide-ap 
-ADD tmp/st_tooling/cubeide/cubeide-aq          /tmp/cubeide-aq 
+RUN java -jar ./SetupSTM32CubeMX-5.6.0.exe  auto-install.xml
+#cubeide tmp/st_tooling02/cubeide
+ADD tmp/st_tooling02/cubeide/cubeide-aa          /tmp/cubeide-aa 
+ADD tmp/st_tooling02/cubeide/cubeide-ab          /tmp/cubeide-ab 
+ADD tmp/st_tooling02/cubeide/cubeide-ac          /tmp/cubeide-ac 
+ADD tmp/st_tooling02/cubeide/cubeide-ad          /tmp/cubeide-ad 
+ADD tmp/st_tooling02/cubeide/cubeide-ae          /tmp/cubeide-ae 
+ADD tmp/st_tooling02/cubeide/cubeide-af          /tmp/cubeide-af 
+ADD tmp/st_tooling02/cubeide/cubeide-ag          /tmp/cubeide-ag 
+ADD tmp/st_tooling02/cubeide/cubeide-ah          /tmp/cubeide-ah 
+ADD tmp/st_tooling02/cubeide/cubeide-ai          /tmp/cubeide-ai 
+ADD tmp/st_tooling02/cubeide/cubeide-aj          /tmp/cubeide-aj 
+ADD tmp/st_tooling02/cubeide/cubeide-ak          /tmp/cubeide-ak 
+ADD tmp/st_tooling02/cubeide/cubeide-al          /tmp/cubeide-al 
+ADD tmp/st_tooling02/cubeide/cubeide-am          /tmp/cubeide-am 
+ADD tmp/st_tooling02/cubeide/cubeide-an          /tmp/cubeide-an 
+ADD tmp/st_tooling02/cubeide/cubeide-ao          /tmp/cubeide-ao 
+ADD tmp/st_tooling02/cubeide/cubeide-ap          /tmp/cubeide-ap 
+ADD tmp/st_tooling02/cubeide/cubeide-aq          /tmp/cubeide-aq 
 ADD tmp/install_automatic_cubeide.sh           /tmp/install_automatic_cubeide.sh
 WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
