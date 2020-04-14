@@ -99,7 +99,7 @@ ADD tmp/install_automatic_cubeide.sh           /tmp/install_automatic_cubeide.sh
 WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
 RUN unzip cubeide.zip
-##RUN . ./st-stm32cubeide_1.2.0_5034_20200108_0926_amd64.deb_bundle.sh -yy
+RUN chmod 777 ./st-stm32cubeide_1.3.0_5720_20200220_1053_amd64.deb_bundle.sh
 RUN expect ./install_automatic_cubeide.sh
 ##########
 #than copy /tmp/gps_arm.desktop to /home/abc/Desktop
