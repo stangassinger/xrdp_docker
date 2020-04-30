@@ -9,7 +9,7 @@ RUN apt-get -yy update
 
 
 RUN apt-get -yy install \
-         geany pkg-config unzip
+         geany geany-plugin-addons pkg-config unzip
                       
          
          

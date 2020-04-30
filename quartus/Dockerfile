@@ -7,7 +7,7 @@ RUN apt-add-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial main uni
 RUN apt-get -y update
 RUN apt-get -yy upgrade
 RUN apt-get -yy install \
-         geany pkg-config unzip tar  
+         geany geany-plugin-addons pkg-config unzip tar  
 RUN  dpkg --add-architecture i386 && \
      apt-get update && \
      apt-get -yy install build-essential && \
