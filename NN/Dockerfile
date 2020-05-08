@@ -59,6 +59,9 @@ ADD tmp/st_tooling02/cubeide/cubeide-aq          /tmp/cubeide-aq
 WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
 RUN unzip cubeide.zip
+RUN chmod 777 ./st-stm32cubeide_1.3.0_5720_20200220_1053_amd64.deb_bundle.sh
+RUN expect ./install_automatic_cubeide.sh
+##########
 # ada fsf
 RUN apt-get -yy install \
                 gnat \
