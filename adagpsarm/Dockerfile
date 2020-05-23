@@ -6,7 +6,7 @@ RUN apt-get -yy upgrade
 RUN apt-get -y update --fix-missing
 RUN apt-get -yy install default-jre 
 RUN apt-get -yy install \
-         geany geany-plugin-addons make unzip expect wget
+         geany geany-plugin-addons geany-plugin-automark make unzip expect wget
 
 RUN dpkg --add-architecture i386
 RUN apt-get -y update 
