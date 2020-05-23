@@ -56,6 +56,7 @@ ADD tmp/st_tooling02/cubeide/cubeide-an          /tmp/cubeide-an
 ADD tmp/st_tooling02/cubeide/cubeide-ao          /tmp/cubeide-ao 
 ADD tmp/st_tooling02/cubeide/cubeide-ap          /tmp/cubeide-ap 
 ADD tmp/st_tooling02/cubeide/cubeide-aq          /tmp/cubeide-aq 
+ADD tmp/install_automatic_cubeide.sh           /tmp/install_automatic_cubeide.sh
 WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
 RUN unzip cubeide.zip
