@@ -64,6 +64,7 @@ RUN chmod 777 ./st-stm32cubeide_1.3.0_5720_20200220_1053_amd64.deb_bundle.sh
 RUN expect ./install_automatic_cubeide.sh
 ##########
 ## needed for stlink
+RUN apt-get -yy install \ 
          build-essential \
          cmake \
          libusb-1.0-0-dev \
