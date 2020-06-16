@@ -10,7 +10,7 @@ cd ../adagps
 #. ./run
 echo "run adagpsarm"
 cd ../adagpsarm
-. ./run
+#. ./run
 echo "run android"
 cd ../android
 #. ./run
