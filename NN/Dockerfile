@@ -10,7 +10,6 @@ RUN aptitude safe-upgrade -yy
 RUN apt-get -y update
 RUN apt-get -yy install \
          geany  gedit  python-scipy  python-pip curl geany-plugin-addons  geany-plugin-automark make unzip expect wget
-RUN pip install opencv-python
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 RUN install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -24,6 +23,8 @@ RUN apt-get update && apt-get install -y \
 	python3.7-minimal \
 	python3-pip \
 	wget 	
+RUN python -m pip install --upgrade pip        
+## tis does not run anymore !!   RUN pip3 install opencv-python	
 RUN pip3 install --upgrade setuptools \
     && pip3 install eventlet gevent gevent-websocket \
 && pip3 install 'gdbgui==0.13.1.1'
@@ -63,7 +64,8 @@ ADD tmp/install_automatic_cubeide.sh           /tmp/install_automatic_cubeide.sh
 WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
 RUN unzip cubeide.zip
-RUN chmod 777 ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64.deb_bundle_sh             
+RUN ls -la
+RUN chmod 777 ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64.deb_bundle.sh              
 RUN expect ./install_automatic_cubeide.sh
 ##########
 ## needed for stlink
@@ -73,7 +75,7 @@ RUN apt-get -yy install \
          libusb-1.0-0-dev \
          usbutils
                       
-         
+        
          
 WORKDIR /tmp
 #download and install stlink
