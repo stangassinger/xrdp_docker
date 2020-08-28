@@ -27,40 +27,43 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install --upgrade setuptools \
     && pip3 install eventlet gevent gevent-websocket \
 && pip3 install 'gdbgui==0.13.1.1'
-#cube tmp/st_tooling02/cubemx
-ADD tmp/st_tooling02/cubemx/cubemx-aa          /tmp/cubemx-aa 
-ADD tmp/st_tooling02/cubemx/cubemx-ab          /tmp/cubemx-ab 
-ADD tmp/st_tooling02/cubemx/cubemx-ac          /tmp/cubemx-ac 
-ADD tmp/st_tooling02/cubemx/cubemx-ad          /tmp/cubemx-ad 
-ADD tmp/st_tooling02/cubemx/cubemx-ae          /tmp/cubemx-ae 
+#cube tmp/st_tooling01/cubemx
+ADD tmp/st_tooling01/cubemx/cubemx-aa          /tmp/cubemx-aa 
+ADD tmp/st_tooling01/cubemx/cubemx-ab          /tmp/cubemx-ab 
+ADD tmp/st_tooling01/cubemx/cubemx-ac          /tmp/cubemx-ac 
+ADD tmp/st_tooling01/cubemx/cubemx-ad          /tmp/cubemx-ad 
+ADD tmp/st_tooling01/cubemx/cubemx-ae          /tmp/cubemx-ae 
+ADD tmp/st_tooling01/cubemx/cubemx-af          /tmp/cubemx-af
 ADD tmp/auto-install.xml /tmp/auto-install.xml
 WORKDIR /tmp
 RUN cat cubemx-* > cubemx.zip 
 RUN unzip cubemx.zip
-RUN java -jar ./SetupSTM32CubeMX-5.6.1.exe  auto-install.xml
-#cubeide tmp/st_tooling02/cubeide
-ADD tmp/st_tooling02/cubeide/cubeide-aa          /tmp/cubeide-aa 
-ADD tmp/st_tooling02/cubeide/cubeide-ab          /tmp/cubeide-ab 
-ADD tmp/st_tooling02/cubeide/cubeide-ac          /tmp/cubeide-ac 
-ADD tmp/st_tooling02/cubeide/cubeide-ad          /tmp/cubeide-ad 
-ADD tmp/st_tooling02/cubeide/cubeide-ae          /tmp/cubeide-ae 
-ADD tmp/st_tooling02/cubeide/cubeide-af          /tmp/cubeide-af 
-ADD tmp/st_tooling02/cubeide/cubeide-ag          /tmp/cubeide-ag 
-ADD tmp/st_tooling02/cubeide/cubeide-ah          /tmp/cubeide-ah 
-ADD tmp/st_tooling02/cubeide/cubeide-ai          /tmp/cubeide-ai 
-ADD tmp/st_tooling02/cubeide/cubeide-aj          /tmp/cubeide-aj 
-ADD tmp/st_tooling02/cubeide/cubeide-ak          /tmp/cubeide-ak 
-ADD tmp/st_tooling02/cubeide/cubeide-al          /tmp/cubeide-al 
-ADD tmp/st_tooling02/cubeide/cubeide-am          /tmp/cubeide-am 
-ADD tmp/st_tooling02/cubeide/cubeide-an          /tmp/cubeide-an 
-ADD tmp/st_tooling02/cubeide/cubeide-ao          /tmp/cubeide-ao 
-ADD tmp/st_tooling02/cubeide/cubeide-ap          /tmp/cubeide-ap 
-ADD tmp/st_tooling02/cubeide/cubeide-aq          /tmp/cubeide-aq 
+RUN java -jar ./SetupSTM32CubeMX-6.0.1.exe  auto-install.xml
+#cubeide tmp/st_tooling01/cubeide
+ADD tmp/st_tooling01/cubeide/cubeide-aa          /tmp/cubeide-aa 
+ADD tmp/st_tooling01/cubeide/cubeide-ab          /tmp/cubeide-ab 
+ADD tmp/st_tooling01/cubeide/cubeide-ac          /tmp/cubeide-ac 
+ADD tmp/st_tooling01/cubeide/cubeide-ad          /tmp/cubeide-ad 
+ADD tmp/st_tooling01/cubeide/cubeide-ae          /tmp/cubeide-ae 
+ADD tmp/st_tooling01/cubeide/cubeide-af          /tmp/cubeide-af 
+ADD tmp/st_tooling01/cubeide/cubeide-ag          /tmp/cubeide-ag 
+ADD tmp/st_tooling01/cubeide/cubeide-ah          /tmp/cubeide-ah 
+ADD tmp/st_tooling01/cubeide/cubeide-ai          /tmp/cubeide-ai 
+ADD tmp/st_tooling01/cubeide/cubeide-aj          /tmp/cubeide-aj 
+ADD tmp/st_tooling01/cubeide/cubeide-ak          /tmp/cubeide-ak 
+ADD tmp/st_tooling01/cubeide/cubeide-al          /tmp/cubeide-al 
+ADD tmp/st_tooling01/cubeide/cubeide-am          /tmp/cubeide-am 
+ADD tmp/st_tooling01/cubeide/cubeide-an          /tmp/cubeide-an 
+ADD tmp/st_tooling01/cubeide/cubeide-ao          /tmp/cubeide-ao 
+ADD tmp/st_tooling01/cubeide/cubeide-ap          /tmp/cubeide-ap 
+ADD tmp/st_tooling01/cubeide/cubeide-aq          /tmp/cubeide-aq 
+ADD tmp/st_tooling01/cubeide/cubeide-ar          /tmp/cubeide-ar 
+ADD tmp/st_tooling01/cubeide/cubeide-as          /tmp/cubeide-as 
 ADD tmp/install_automatic_cubeide.sh           /tmp/install_automatic_cubeide.sh
 WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
 RUN unzip cubeide.zip
-RUN chmod 777 ./st-stm32cubeide_1.3.0_5720_20200220_1053_amd64.deb_bundle.sh
+RUN chmod 777 ./st-stm32cubeide_1.4.0_7511_20200720_0928_amd64.deb_bundle_sh             
 RUN expect ./install_automatic_cubeide.sh
 ##########
 ## needed for stlink
