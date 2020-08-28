@@ -1,6 +1,8 @@
 xfce on docker
 ==============
 
+git clone --recursive https://github.com/stangassinger/xrdp_docker
+
 Connecting over network with xrdp
 Code parts taken from:
 https://github.com/danielguerra69/ubuntu-xrdp
