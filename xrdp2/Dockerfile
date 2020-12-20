@@ -13,14 +13,20 @@ ENV BUILD_DEPS="autoconf libssl-dev libpam0g-dev \
     libx11-dev libxfixes-dev libxrandr-dev nasm xsltproc flex \
     bison libxml2-dev dpkg-dev libcap-dev libfuse-dev libpulse-dev libtool \
     xserver-xorg-dev wget ssl-cert"
-RUN apt-get -yy install \ 
-	sudo synaptic pkg-config apt-utils software-properties-common vim wget ca-certificates \
-    xfce4 xfce4-terminal xfce4-screenshooter xfce4-taskmanager \
-    xfce4-clipman-plugin xfce4-cpugraph-plugin xfce4-netload-plugin \
-    xfce4-xkb-plugin xauth supervisor uuid-runtime pulseaudio locales \
+RUN apt-get -yy upgrade --fix-missing
+RUN apt-get -yy install --fix-missing \ 
+	sudo synaptic pkg-config apt-utils software-properties-common vim wget ca-certificates 
+RUN apt-get -yy install --fix-missing \ 
+    xfce4 xfce4-terminal xfce4-screenshooter xfce4-taskmanager 
+RUN apt-get -yy install --fix-missing \ 
+    xfce4-clipman-plugin xfce4-cpugraph-plugin xfce4-netload-plugin 
+RUN apt-get -yy install --fix-missing \ 
+    xfce4-xkb-plugin \ 
+    $BUILD_DEPS           
+RUN apt-get -yy install --fix-missing \ 
+    xauth supervisor uuid-runtime pulseaudio locales \
     firefox pepperflashplugin-nonfree openssh-server git gitk flashplugin-installer \ 
-    evince xpdf atril meld \
-    $BUILD_DEPS
+    evince xpdf atril meld
 
 
 # Build xrdp
