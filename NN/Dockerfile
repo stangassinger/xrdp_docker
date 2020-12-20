@@ -31,6 +31,7 @@ RUN pip3 install --upgrade setuptools \
 ## install clang and codechecker; https://codechecker.readthedocs.io
 RUN apt-get install -y clang clang-tidy clang-tools build-essential curl doxygen \
       gcc-multilib  python-virtualenv python3-dev 
+RUN apt-get install tio
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN git clone https://github.com/Ericsson/CodeChecker.git --depth 1  /codechecker
