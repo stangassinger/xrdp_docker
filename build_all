@@ -20,6 +20,3 @@ cd ../quartus
 echo "run neural network"
 cd ../NN
 . ./run
-echo "run neural network update"
-cd ../NN_up
-. ./run
