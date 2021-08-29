@@ -1,4 +1,5 @@
-FROM ubuntu:18.04 as base
+FROM ubuntu:20.04 as base
+# FROM ubuntu:18.04 as base
 MAINTAINER Guenther Stangassinger
 
 FROM base as builder
@@ -22,7 +23,7 @@ RUN apt-get -yy install --fix-missing \
 RUN apt-get -yy install --fix-missing \ 
     xauth supervisor uuid-runtime pulseaudio locales \
     firefox pepperflashplugin-nonfree openssh-server git gitk flashplugin-installer \ 
-    evince xpdf atril meld
+    evince okular atril meld
 
 
 # Build xrdp
@@ -30,8 +31,8 @@ RUN apt-get -yy install --fix-missing \
 WORKDIR /tmp
 RUN apt-get source pulseaudio \
     && apt-get build-dep -yy pulseaudio
-WORKDIR /tmp/pulseaudio-11.1
-RUN dpkg-buildpackage -rfakeroot -uc -b
+WORKDIR /tmp/pulseaudio-13.99.1
+RUN dpkg-buildpackage -rfakeroot -uc -b 
 WORKDIR /tmp
 RUN git clone --branch v0.9.4 --recursive https://github.com/neutrinolabs/xrdp.git
 WORKDIR /tmp/xrdp
@@ -40,7 +41,7 @@ RUN ./bootstrap \
     && make \
     && make install
 WORKDIR /tmp/xrdp/sesman/chansrv/pulse
-RUN sed -i "s/\/tmp\/pulseaudio\-10\.0/\/tmp\/pulseaudio\-11\.1/g" Makefile  \
+RUN sed -i "s/\/tmp\/pulseaudio\-10\.0/\/tmp\/pulseaudio\-13\.99\.1/g" Makefile  \
     && make \
     && mkdir -p /tmp/so \
     && cp *.so /tmp/so
