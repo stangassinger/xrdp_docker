@@ -86,7 +86,7 @@ ADD tmp/auto-install.xml /tmp/auto-install.xml
 WORKDIR /tmp
 RUN cat cubemx-* > cubemx.zip 
 RUN unzip cubemx.zip
-RUN java -jar ./SetupSTM32CubeMX-6.2.1  auto-install.xml
+RUN java -jar ./SetupSTM32CubeMX-6.3.0  auto-install.xml
 #cubeide tmp/st_tooling01/cubeide
 ADD tmp/st_tooling02/cubeide/cubeide-aa          /tmp/cubeide-aa 
 ADD tmp/st_tooling02/cubeide/cubeide-ab          /tmp/cubeide-ab 
@@ -106,12 +106,14 @@ ADD tmp/st_tooling02/cubeide/cubeide-ao          /tmp/cubeide-ao
 ADD tmp/st_tooling02/cubeide/cubeide-ap          /tmp/cubeide-ap 
 ADD tmp/st_tooling02/cubeide/cubeide-aq          /tmp/cubeide-aq 
 ADD tmp/st_tooling02/cubeide/cubeide-ar          /tmp/cubeide-ar 
+ADD tmp/st_tooling02/cubeide/cubeide-as          /tmp/cubeide-as 
+ADD tmp/st_tooling02/cubeide/cubeide-at          /tmp/cubeide-at 
 ADD tmp/install_automatic_cubeide.sh           /tmp/install_automatic_cubeide.sh
 WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
 RUN unzip cubeide.zip
 RUN ls -la
-RUN chmod 777 ./st-stm32cubeide_1.6.1_9958_20210326_1446_amd64.deb_bundle.sh              
+RUN chmod 777 ./st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh              
 RUN expect ./install_automatic_cubeide.sh
 ##########
 ## needed for stlink

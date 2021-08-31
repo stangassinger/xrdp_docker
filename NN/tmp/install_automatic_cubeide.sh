@@ -4,7 +4,7 @@ set exp_internal 1
 set done1  0
 set done2  0
 set timeout 200 
-spawn ./st-stm32cubeide_1.6.1_9958_20210326_1446_amd64.deb_bundle.sh --confirm
+spawn ./st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh --confirm
 expect  "*Y/n*"
 send    "y\r"
 expect  "*Y/n*"
