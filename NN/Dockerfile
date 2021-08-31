@@ -9,28 +9,27 @@ RUN apt-get -y update
 RUN aptitude safe-upgrade -yy
 RUN apt-get -y update
 RUN apt-get -yy install \
-         geany  gedit  python-scipy  python-pip curl geany-plugin-addons  geany-plugin-automark make unzip expect wget
+         geany  gedit  python3-scipy  python3-pip curl geany-plugin-addons  geany-plugin-automark make unzip expect wget
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 RUN install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 RUN apt-get -y update
 RUN apt-get install apt-transport-https
 RUN apt-get -y update
-RUN apt-get -yy install code golang-go unzip default-jre  gcc-arm-none-eabi
+RUN apt-get -yy install git code golang-go unzip default-jre  gcc-arm-none-eabi
 #gdbgui
 RUN apt-get update && apt-get install -y \
 	libncurses5 \
-	python3.7-minimal \
 	python3-pip \
 	wget 	
-RUN python -m pip install --upgrade pip        
+RUN python3 -m pip install --upgrade pip        
 ## tis does not run anymore !!   RUN pip3 install opencv-python	
 RUN pip3 install --upgrade setuptools \
     && pip3 install eventlet gevent gevent-websocket \
 && pip3 install 'gdbgui==0.13.1.1'
 ## install clang and codechecker; https://codechecker.readthedocs.io
 RUN apt-get install -y clang clang-tidy clang-tools build-essential curl doxygen \
-      gcc-multilib  python-virtualenv python3-dev tio
+      gcc-multilib  python3-virtualenv python3-dev tio
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN apt-get install -y nodejs
 RUN git clone https://github.com/Ericsson/CodeChecker.git --depth 1  /codechecker
@@ -135,13 +134,13 @@ RUN ldconfig /usr/local/lib/lib
 ## not working  RUN udevadm control --reload-rules
 ##########
 # ada fsf
-RUN apt-get -yy install \
-                gnat \
-                gnat-7-arm-linux-gnueabi \
-                gnat-7-arm-linux-gnueabihf \
-                gcc-arm-linux-gnueabi \
-                gcc-arm-linux-gnueabihf \ 
-                gprbuild
+#RUN apt-get -yy install \
+#                gnat \
+#                gnat-7-arm-linux-gnueabi \
+#                gnat-7-arm-linux-gnueabihf \
+#                gcc-arm-linux-gnueabi \
+#                gcc-arm-linux-gnueabihf \ 
+#                gprbuild
 RUN curl -sSf https://sh.rustup.rs | sh -s -- -y 
 RUN apt-get -yy install \
 #         cargo \    
