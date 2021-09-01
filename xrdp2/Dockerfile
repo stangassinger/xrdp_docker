@@ -109,4 +109,4 @@ VOLUME ["/etc/ssh","/home"]
 EXPOSE 3389 22 9001
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
 CMD ["supervisord"]
-ADD --chown=abc:abc  tmp/restoreXfce.sh  /home/abc
+ADD --chown=abc:abc  restoreXfce.sh  /home/abc
