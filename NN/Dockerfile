@@ -21,6 +21,9 @@ RUN apt-get -yy install git code golang-go unzip default-jre  gcc-arm-none-eabi
 RUN apt-get update && apt-get install -y \
 	libncurses5 \
 	python3-pip \
+	net-tools \
+	can-utils \
+	python-is-python3 \
 	wget 	
 RUN python3 -m pip install --upgrade pip        
 ## tis does not run anymore !!   RUN pip3 install opencv-python	
