@@ -2,3 +2,6 @@
 [submodule "NN/tmp/st_tooling02"]
 	path = NN/tmp/st_tooling02
 	url = https://github.com/stangassinger/st_tooling02.git
+[submodule "NN/tmp/st_tooling03"]
+	path = NN/tmp/st_tooling03
+	url = https://github.com/stangassinger/st_tooling03.git
