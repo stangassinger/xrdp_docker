@@ -1,4 +1,4 @@
-FROM xrdp2
+FROM xrdp3
 MAINTAINER Guenther Stangassinger
 
 RUN apt-get -y update
@@ -19,61 +19,14 @@ RUN apt-get -y update
 RUN apt-get -yy install git code golang-go unzip default-jre  gcc-arm-none-eabi
 #gdbgui
 RUN apt-get update && apt-get install -y \
-	libncurses5 \
-	python3-pip \
 	net-tools \
 	can-utils \
 	python-is-python3 \
-	wget 	
-RUN python3 -m pip install --upgrade pip        
+	wget \
+	nemo	
+RUN python -m pip install --upgrade pip        
 ## tis does not run anymore !!   RUN pip3 install opencv-python	
-RUN pip3 install --upgrade setuptools \
-    && pip3 install eventlet gevent gevent-websocket \
-&& pip3 install 'gdbgui==0.13.1.1'
-## install clang and codechecker; https://codechecker.readthedocs.io
-RUN apt-get install -y clang clang-tidy clang-tools build-essential curl doxygen \
-      gcc-multilib  python3-virtualenv python3-dev tio
-RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-RUN apt-get install -y nodejs
-RUN git clone https://github.com/Ericsson/CodeChecker.git --depth 1  /codechecker
-WORKDIR /codechecker
-############# check if this line is needed -->RUN git checkout ${master}
-RUN git checkout ${master}
-#############       RUN make -C /codechecker/web package
 
-#########   RUN make venv
-ARG INSTALL_AUTH=yes
-ARG INSTALL_PG8000=no
-ARG INSTALL_PSYCOPG2=yes
-
-ENV TINI_VERSION v0.18.0
-
-RUN set -x && apt-get update -qq \
-  # Prevent fail when install postgresql-client.
-  && mkdir -p /usr/share/man/man1 \
-  && mkdir -p /usr/share/man/man7 \
-  \
-  && apt-get install -qqy --no-install-recommends ca-certificates \
-    postgresql-client \
-    # To switch user and exec command.
-    gosu
-
-RUN if [ "$INSTALL_AUTH" = "yes" ] ; then \
-      apt-get install -qqy --no-install-recommends \
-        libldap2-dev \
-        libsasl2-dev \
-        libssl-dev; \
-    fi
-
-RUN if [ "$INSTALL_PSYCOPG2" = "yes" ] ; then \
-      apt-get install -qqy --no-install-recommends \
-        libpq-dev; \
-    fi
-
-RUN groupadd -r codechecker -g 950 \
-  && useradd -r --no-log-init -M -u 950 -g codechecker codechecker
-RUN chown codechecker:codechecker /codechecker
-ENV PATH="/codechecker/bin:$PATH"
 
 #cube tmp/st_tooling03/cubemx
 ADD tmp/st_tooling03/cubemx/cubemx-aa          /tmp/cubemx-aa 

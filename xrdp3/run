@@ -1,0 +1,2 @@
+# build
+sudo docker build --rm -t xrdp3  .
