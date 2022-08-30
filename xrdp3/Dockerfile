@@ -45,13 +45,19 @@ RUN apt -y full-upgrade && apt-get install -y \
   xorgxrdp \
   xprintidle \
   xrdp \
-  pipewire-audio-client-libraries \
   $ADDITIONAL_PACKAGES && \
   apt remove -y light-locker xscreensaver && \
   apt autoremove -y && \
   rm -rf /var/cache/apt /var/lib/apt/lists
+  
+# install firefox    
+RUN add-apt-repository ppa:mozillateam/ppa -y
+
 ADD bin /usr/bin
 ADD etc /etc
+
+# install firefox
+RUN apt install firefox -yy --allow-downgrades
 
 # Configure
 RUN mkdir /var/run/dbus && \
@@ -59,7 +65,6 @@ RUN mkdir /var/run/dbus && \
   sed -i "s/console/anybody/g" /etc/X11/Xwrapper.config && \
   sed -i "s/xrdp\/xorg/xorg/g" /etc/xrdp/sesman.ini && \
   locale-gen en_US.UTF-8 && \
-#   echo "pulseaudio -D --enable-memfd=True" > /etc/skel/.Xsession && \
   echo "xfce4-session" >> /etc/skel/.Xsession && \
   cp -r /etc/ssh /ssh_orig && \
   rm -rf /etc/ssh/* && \
