@@ -28,49 +28,52 @@ RUN python -m pip install --upgrade pip
 ## tis does not run anymore !!   RUN pip3 install opencv-python	
 
 
-#cube tmp/st_tooling03/cubemx
-ADD tmp/st_tooling03/cubemx/cubemx-aa          /tmp/cubemx-aa 
-ADD tmp/st_tooling03/cubemx/cubemx-ab          /tmp/cubemx-ab 
-ADD tmp/st_tooling03/cubemx/cubemx-ac          /tmp/cubemx-ac 
-ADD tmp/st_tooling03/cubemx/cubemx-ad          /tmp/cubemx-ad 
-ADD tmp/st_tooling03/cubemx/cubemx-ae          /tmp/cubemx-ae 
-ADD tmp/st_tooling03/cubemx/cubemx-af          /tmp/cubemx-af
-ADD tmp/st_tooling03/cubemx/cubemx-ag          /tmp/cubemx-ag
-ADD tmp/st_tooling03/cubemx/cubemx-ah          /tmp/cubemx-ah
-ADD tmp/st_tooling03/cubemx/cubemx-ai          /tmp/cubemx-ai
-ADD tmp/st_tooling03/cubemx/cubemx-aj          /tmp/cubemx-aj
+#cube tmp/st_tooling04/cubemx
+ADD tmp/st_tooling04/cubemx/cubemx-aa          /tmp/cubemx-aa 
+ADD tmp/st_tooling04/cubemx/cubemx-ab          /tmp/cubemx-ab 
+ADD tmp/st_tooling04/cubemx/cubemx-ac          /tmp/cubemx-ac 
+ADD tmp/st_tooling04/cubemx/cubemx-ad          /tmp/cubemx-ad 
+ADD tmp/st_tooling04/cubemx/cubemx-ae          /tmp/cubemx-ae 
+ADD tmp/st_tooling04/cubemx/cubemx-af          /tmp/cubemx-af
+ADD tmp/st_tooling04/cubemx/cubemx-ag          /tmp/cubemx-ag
+ADD tmp/st_tooling04/cubemx/cubemx-ah          /tmp/cubemx-ah
+ADD tmp/st_tooling04/cubemx/cubemx-ai          /tmp/cubemx-ai
+ADD tmp/st_tooling04/cubemx/cubemx-aj          /tmp/cubemx-aj
+ADD tmp/st_tooling04/cubemx/cubemx-ak          /tmp/cubemx-ak
+ADD tmp/st_tooling04/cubemx/cubemx-al          /tmp/cubemx-al
 ADD tmp/auto-install.xml /tmp/auto-install.xml
 WORKDIR /tmp
 RUN cat cubemx-* > cubemx.zip 
 RUN unzip cubemx.zip
-RUN java -jar ./SetupSTM32CubeMX-6.5.0  auto-install.xml
-#cubeide tmp/st_tooling03/cubeide
-ADD tmp/st_tooling03/cubeide/cubeide-aa          /tmp/cubeide-aa 
-ADD tmp/st_tooling03/cubeide/cubeide-ab          /tmp/cubeide-ab 
-ADD tmp/st_tooling03/cubeide/cubeide-ac          /tmp/cubeide-ac 
-ADD tmp/st_tooling03/cubeide/cubeide-ad          /tmp/cubeide-ad 
-ADD tmp/st_tooling03/cubeide/cubeide-ae          /tmp/cubeide-ae 
-ADD tmp/st_tooling03/cubeide/cubeide-af          /tmp/cubeide-af 
-ADD tmp/st_tooling03/cubeide/cubeide-ag          /tmp/cubeide-ag 
-ADD tmp/st_tooling03/cubeide/cubeide-ah          /tmp/cubeide-ah 
-ADD tmp/st_tooling03/cubeide/cubeide-ai          /tmp/cubeide-ai 
-ADD tmp/st_tooling03/cubeide/cubeide-aj          /tmp/cubeide-aj 
-ADD tmp/st_tooling03/cubeide/cubeide-ak          /tmp/cubeide-ak 
-ADD tmp/st_tooling03/cubeide/cubeide-al          /tmp/cubeide-al 
-ADD tmp/st_tooling03/cubeide/cubeide-am          /tmp/cubeide-am 
-ADD tmp/st_tooling03/cubeide/cubeide-an          /tmp/cubeide-an 
-ADD tmp/st_tooling03/cubeide/cubeide-ao          /tmp/cubeide-ao 
-ADD tmp/st_tooling03/cubeide/cubeide-ap          /tmp/cubeide-ap 
-ADD tmp/st_tooling03/cubeide/cubeide-aq          /tmp/cubeide-aq 
-ADD tmp/st_tooling03/cubeide/cubeide-ar          /tmp/cubeide-ar 
-ADD tmp/st_tooling03/cubeide/cubeide-as          /tmp/cubeide-as 
-ADD tmp/st_tooling03/cubeide/cubeide-at          /tmp/cubeide-at 
+RUN java -jar ./SetupSTM32CubeMX-6.7.0  auto-install.xml
+#cubeide tmp/st_tooling04/cubeide
+ADD tmp/st_tooling04/cubeide/cubeide-aa          /tmp/cubeide-aa 
+ADD tmp/st_tooling04/cubeide/cubeide-ab          /tmp/cubeide-ab 
+ADD tmp/st_tooling04/cubeide/cubeide-ac          /tmp/cubeide-ac 
+ADD tmp/st_tooling04/cubeide/cubeide-ad          /tmp/cubeide-ad 
+ADD tmp/st_tooling04/cubeide/cubeide-ae          /tmp/cubeide-ae 
+ADD tmp/st_tooling04/cubeide/cubeide-af          /tmp/cubeide-af 
+ADD tmp/st_tooling04/cubeide/cubeide-ag          /tmp/cubeide-ag 
+ADD tmp/st_tooling04/cubeide/cubeide-ah          /tmp/cubeide-ah 
+ADD tmp/st_tooling04/cubeide/cubeide-ai          /tmp/cubeide-ai 
+ADD tmp/st_tooling04/cubeide/cubeide-aj          /tmp/cubeide-aj 
+ADD tmp/st_tooling04/cubeide/cubeide-ak          /tmp/cubeide-ak 
+ADD tmp/st_tooling04/cubeide/cubeide-al          /tmp/cubeide-al 
+ADD tmp/st_tooling04/cubeide/cubeide-am          /tmp/cubeide-am 
+ADD tmp/st_tooling04/cubeide/cubeide-an          /tmp/cubeide-an 
+ADD tmp/st_tooling04/cubeide/cubeide-ao          /tmp/cubeide-ao 
+ADD tmp/st_tooling04/cubeide/cubeide-ap          /tmp/cubeide-ap 
+ADD tmp/st_tooling04/cubeide/cubeide-aq          /tmp/cubeide-aq 
+ADD tmp/st_tooling04/cubeide/cubeide-ar          /tmp/cubeide-ar 
+ADD tmp/st_tooling04/cubeide/cubeide-as          /tmp/cubeide-as 
+ADD tmp/st_tooling04/cubeide/cubeide-at          /tmp/cubeide-at 
+ADD tmp/st_tooling04/cubeide/cubeide-au          /tmp/cubeide-au 
 ADD tmp/install_automatic_cubeide.sh           /tmp/install_automatic_cubeide.sh
 WORKDIR /tmp
 RUN cat cubeide-* > cubeide.zip 
 RUN unzip cubeide.zip
 RUN ls -la
-RUN chmod 777 ./st-stm32cubeide_1.9.0_12015_20220302_0855_amd64.deb_bundle.sh              
+RUN chmod 777 ./st-stm32cubeide_1.11.0_13638_20221122_1308_amd64.deb_bundle.sh              
 RUN expect ./install_automatic_cubeide.sh
 ##########
 ## needed for stlink

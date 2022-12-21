@@ -9,6 +9,7 @@ https://github.com/danielguerra69/ubuntu-xrdp
 
 xrdp1 is ubuntu:16.04
 xrdp2 is ubuntu:18.04
+xrdp3 is ubuntu:22.04
 
 #run
 docker run -v ~/docker/volume/myHome/base:/home/abc \
