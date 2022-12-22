@@ -26,8 +26,28 @@ RUN apt-get update && apt-get install -y \
 	nemo	
 RUN python -m pip install --upgrade pip        
 ## tis does not run anymore !!   RUN pip3 install opencv-python	
-
-
+########### start frama-c #############
+###  install frama-c
+###  sudo apt install opam
+###  opam install depext
+###  eval $(opam env --switch=default)
+###  opam depext frama-c
+###  opam install frama-c
+###  opam install alt-ergo
+###  eval $(opam env) 
+###  frama-c-gui -wp -rte main.c
+#
+RUN apt -yy install opam 
+RUN apt -yy install autoconf graphviz \
+                     libcairo2-dev libgmp-dev \
+                     libgtk-3-dev libgtksourceview-3.0-dev
+RUN opam init --auto-setup --yes --bare --disable-sandboxing && \
+  opam switch create system ocaml-system && \
+  eval $(opam env --switch=system) && \
+  opam install frama-c -y && \
+  opam install alt-ergo
+########### end frama-c #############
+#
 #cube tmp/st_tooling04/cubemx
 ADD tmp/st_tooling04/cubemx/cubemx-aa          /tmp/cubemx-aa 
 ADD tmp/st_tooling04/cubemx/cubemx-ab          /tmp/cubemx-ab 
