@@ -127,9 +127,10 @@ RUN apt-get -y update
 ###  opam install depext
 ###  eval $(opam env --switch=default)
 ###  opam depext frama-c
-###  opam install frama-c
+###  opam install frama-c -y
 ###  opam install alt-ergo
 ###  eval $(opam env) 
+###  why3 config detect
 ###  frama-c-gui -wp -rte main.c
 #
 RUN apt -yy install opam 
