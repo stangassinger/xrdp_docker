@@ -136,19 +136,19 @@ RUN apt -yy install opam
 RUN apt -yy install autoconf graphviz \
                      libcairo2-dev libgmp-dev \
                      libgtk-3-dev libgtksourceview-3.0-dev
-USER abc
-ENV HOME /home/abc
-ENV OPAMYES 1
-WORKDIR /home/abc
-USER abc
-RUN opam init --disable-sandboxing && \
-#  opam switch create system ocaml-system && \
-  eval $(opam env --switch=default) && \
-  opam install frama-c -y && \
-  opam install alt-ergo
+# USER abc
+# ENV HOME /home/abc
+# ENV OPAMYES 1
+# WORKDIR /home/abc
+# USER abc
+# RUN opam init --disable-sandboxing && \
+# #  opam switch create system ocaml-system && \
+#   eval $(opam env --switch=default) && \
+#   opam install frama-c -y && \
+#   opam install alt-ergo
 ########### end frama-c #############
-USER root
-
+# USER root
+RUN apt-get -y update
 
 
 
