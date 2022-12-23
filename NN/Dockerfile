@@ -141,12 +141,13 @@ ENV HOME /home/abc
 ENV OPAMYES 1
 WORKDIR /home/abc
 USER abc
-RUN opam init --auto-setup --yes --bare --disable-sandboxing && \
-  opam switch create system ocaml-system && \
-  eval $(opam env --switch=system) && \
+RUN opam init --disable-sandboxing && \
+#  opam switch create system ocaml-system && \
+  eval $(opam env --switch=default) && \
   opam install frama-c -y && \
   opam install alt-ergo
 ########### end frama-c #############
+USER root
 
 
 
