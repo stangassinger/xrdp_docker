@@ -12,10 +12,11 @@ xrdp2 is ubuntu:18.04
 xrdp3 is ubuntu:22.04
 
 #run
-docker run -v ~/docker/volume/myHome/base:/home/abc \
-           -v ~/docker/volume/ssh_etc:/etc/ssh  --rm -it --name \
-           con_xrdp --hostname xrdp_server --shm-size 1g xrdp2
-
+ docker run   --privileged  -v ~/docker/volume/myHome/NN:/home/abc/NN \
+              -v /dev:/dev  -v /dev/kvm:/dev/kvm   \
+              -v /dev/serial:/dev/serial --device=/dev/pcanusbfd32  \
+              -v /dev:/dev     --rm -it --name con_xrdp   \
+              --hostname xrdp_server  --shm-size 1g  nn
 
 #####
 connect to the machine with:
