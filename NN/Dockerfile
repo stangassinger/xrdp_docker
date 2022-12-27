@@ -9,7 +9,8 @@ RUN apt-get -y update
 RUN aptitude safe-upgrade -yy
 RUN apt-get -y update
 RUN apt-get -yy install \
-         gitk geany  gedit  python3-scipy  python3-pip curl geany-plugin-addons  geany-plugin-automark make unzip expect wget
+         gitk geany  gedit  python3-scipy  python3-pip curl geany-plugin-addons \
+         geany-plugin-automark make unzip expect wget evince meld
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 RUN install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
