@@ -1,4 +1,4 @@
 # build
-sudo docker build --rm -t  nn  .
+sudo docker buildx build  --platform linux/amd64  --rm -t  nn  .
 
 

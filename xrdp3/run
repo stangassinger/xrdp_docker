@@ -1,2 +1,2 @@
 # build
-sudo docker build --rm -t xrdp3  .
+sudo docker  buildx build  --platform linux/amd64  --rm -t xrdp3  .

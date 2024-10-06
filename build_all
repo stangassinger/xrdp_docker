@@ -1,24 +1,24 @@
 ## Building all images with one command:
-echo "run xrdp1"
+#echo "run xrdp1"
 cd xrdp1
 #. ./run
-echo "run xrdp2"
-cd ../xrdp2
+#echo "run xrdp2"
+#cd ../xrdp2
 #. ./run
 echo "run xrdp3"
 cd ../xrdp3
 . ./run
-echo "run adagps"
-cd ../adagps
+#echo "run adagps"
+#cd ../adagps
 #. ./run
-echo "run adagpsarm"
-cd ../adagpsarm
+#echo "run adagpsarm"
+#cd ../adagpsarm
 #. ./run
-echo "run android"
-cd ../android
+#echo "run android"
+#cd ../android
 #. ./run
-echo "run quartus"
-cd ../quartus
+#echo "run quartus"
+#cd ../quartus
 #. ./run
 echo "run neural network"
 cd ../NN
