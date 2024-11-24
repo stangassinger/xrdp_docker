@@ -1,4 +1,4 @@
-FROM ubuntu:22.04 as builder
+FROM ubuntu:24.04 as builder
 MAINTAINER Guenther Stangassinger
 
 # Install packages
@@ -94,6 +94,7 @@ RUN cd /root && \
         libopus-dev \
         libmp3lame-dev \
         xorgxrdp \
+        bash-completion \
         xrdp && \
     #apt-get update && apt build-dep pulseaudio -y && \
     #cd /tmp && apt source pulseaudio && \
