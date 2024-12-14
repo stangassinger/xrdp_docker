@@ -1,3 +1,4 @@
+https://blog.meister-security.de/kali-linux-mit-xfce-im-docker-container/
 sudo sh ./build.sh
 sudo sh ./create_kali.sh
 sudo sh ./run.sh
