@@ -25,3 +25,4 @@ Path=\n\
 Terminal=true\n\
 StartupNotify=true' > /home/${UNAME}/Desktop/restore.desktop
 RUN chmod 777 /home/${UNAME}/Desktop/restore.desktop
+RUN apt -y install geany xfce4-notifyd
