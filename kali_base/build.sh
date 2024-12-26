@@ -1,5 +1,5 @@
 docker image build --platform linux/amd64 \
-        -t kali \
+        -t kali_base \
         --build-arg DESKTOP_ENVIRONMENT=xfce \
         --build-arg REMOTE_ACCESS=rdp \
         --build-arg KALI_PACKAGE=core \
