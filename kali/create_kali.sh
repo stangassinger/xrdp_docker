@@ -1,4 +1,4 @@
-docker create   --name kali \
+sudo docker create   --name kali \
                 --network bridge \
                 --platform linux/amd64 \
                 -p 3389:3389 \

@@ -1,1 +1,1 @@
-docker start kali
+sudo docker start kali
