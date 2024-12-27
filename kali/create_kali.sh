@@ -5,5 +5,5 @@ sudo docker create   --name kali \
                 -p 5908:5908 \
                 -p 20022:20022 \
                 -t \
-                -v /home/tux/docker/volume/myHome:/home/abc:rw \
+                -v /home/tux/docker/volume/myHome/NN:/home/abc/NN \
                 kali
