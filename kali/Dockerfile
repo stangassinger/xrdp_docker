@@ -27,6 +27,8 @@ StartupNotify=true' > /home/${UNAME}/Desktop/restore.desktop
 RUN chmod 777 /home/${UNAME}/Desktop/restore.desktop
 RUN apt update
 RUN apt full-upgrade -y
+RUN apt update
+RUN apt -y install kali-linux-headless
 RUN apt -y install xfce4-notifyd 
 
 RUN apt-get -yy install \

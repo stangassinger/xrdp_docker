@@ -1,4 +1,4 @@
-FROM kalilinux/kali-rolling
+FROM kalilinux/kali-last-release
 
 ARG DESKTOP_ENVIRONMENT
 ARG REMOTE_ACCESS
